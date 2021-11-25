@@ -32,7 +32,7 @@ public class VoucherServiceImplTest {
 		Voucher voucher = new Voucher();
 		voucher.setCode("MYNT");
 		voucher.setDiscount(new BigDecimal(10));
-		voucher.setExpiryDate(LocalDate.now().plusYears(1));
+		voucher.setExpiry(LocalDate.now().plusYears(1));
 		
 		Mockito.when(voucherFeignClient.retrieveVoucher("MYNT", "apikey")).thenReturn(voucher);
 		Assertions.assertNotNull(service.retrieveVoucher("MYNT"));
@@ -44,7 +44,7 @@ public class VoucherServiceImplTest {
 		Voucher voucher = new Voucher();
 		voucher.setCode("MYNT");
 		voucher.setDiscount(new BigDecimal(10));
-		voucher.setExpiryDate(LocalDate.now().plusYears(1));
+		voucher.setExpiry(LocalDate.now().plusYears(1));
 		
 		Mockito.when(voucherFeignClient.retrieveVoucher("test", "apikey")).thenReturn(null);
 		

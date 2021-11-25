@@ -92,7 +92,7 @@ public class ParcelCalculatorImplTest {
 		Voucher voucher = new Voucher();
 		voucher.setCode("MYNT");
 		voucher.setDiscount(new BigDecimal(10));
-		voucher.setExpiryDate(LocalDate.now().plusYears(1));
+		voucher.setExpiry(LocalDate.now().plusYears(1));
 		Mockito.when(voucherService.retrieveVoucher("MYNT")).thenReturn(voucher);
 		
 		ParcelRequest request = new ParcelRequest();

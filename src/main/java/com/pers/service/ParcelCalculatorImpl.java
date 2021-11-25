@@ -1,6 +1,7 @@
 package com.pers.service;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +56,12 @@ public class ParcelCalculatorImpl implements ParcelCalculatorApi {
 
 	private Voucher retrieveVoucher(ParcelRequest request) {
 		if(request.getVoucherCode() != null) {
-			return voucherService.retrieveVoucher(request.getVoucherCode());
+			Voucher voucher = voucherService.retrieveVoucher(request.getVoucherCode());
+			if (voucher.getExpiry().isBefore(LocalDate.now())) {
+				return null;
+			} else {
+				return voucherService.retrieveVoucher(request.getVoucherCode());
+			}
 		}
 		return null;
 	}

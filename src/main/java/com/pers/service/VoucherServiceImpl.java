@@ -24,7 +24,7 @@ public class VoucherServiceImpl implements VoucherServiceApi {
 			Optional.ofNullable(voucherFeignClient.retrieveVoucher(voucherCode, "apikey")).ifPresent(v -> {
 				voucher.setCode(v.getCode());
 				voucher.setDiscount(v.getDiscount());
-				voucher.setExpiryDate(v.getExpiryDate());
+				voucher.setExpiry(v.getExpiry());
 			});
 		});
 		

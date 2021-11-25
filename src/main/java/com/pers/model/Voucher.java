@@ -7,7 +7,7 @@ public class Voucher {
 
 	public String code;
 	public BigDecimal discount;
-	public LocalDate expiryDate;
+	public LocalDate expiry;
 	
 	public String getCode() {
 		return code;
@@ -21,11 +21,11 @@ public class Voucher {
 	public void setDiscount(BigDecimal discount) {
 		this.discount = discount;
 	}
-	public LocalDate getExpiryDate() {
-		return expiryDate;
+	public LocalDate getExpiry() {
+		return expiry;
 	}
-	public void setExpiryDate(LocalDate expiryDate) {
-		this.expiryDate = expiryDate;
+	public void setExpiry(LocalDate expiry) {
+		this.expiry = expiry;
 	}
 	
 }
