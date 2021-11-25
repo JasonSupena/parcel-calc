@@ -6,7 +6,14 @@ public class ParcelRequest {
 	public int height;
 	public int width;
 	public int length;
+	public String voucherCode;
 	
+	public String getVoucherCode() {
+		return voucherCode;
+	}
+	public void setVoucherCode(String voucherCode) {
+		this.voucherCode = voucherCode;
+	}
 	public int getWeight() {
 		return weight;
 	}
